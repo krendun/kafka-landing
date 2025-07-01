@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Father and Sons Home Improvement - Professional Property Management & Restoration</title>
+    <meta name="description" content="Expert property management and restoration services. From roofing to drywall, we handle all your property needs with professional care.">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo"> *insert logo here* </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work-request">Get Quote</a></li>
+                <li><a href="#gallery">Our Work</a></li>
+                <li><a href="#jobs">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <h1>Professional Property Management & Restoration</h1>
+            <p>From roofing to drywall, we transform properties with expert craftsmanship and reliable service. Your property investment deserves the best care.</p>
+            <a href="#work-request" class="cta-button">Get Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏠</div>
+                    <h3>Roofing Services</h3>
+                    <p>Complete roofing solutions including repairs, replacements, and maintenance. We work with all roofing materials and provide comprehensive warranties.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔨</div>
+                    <h3>Drywall & Interior</h3>
+                    <p>Expert drywall installation, repair, and finishing. From small patches to complete interior renovations, we deliver flawless results.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎨</div>
+                    <h3>Painting & Finishing</h3>
+                    <p>Professional interior and exterior painting services. We use premium materials and techniques to ensure lasting, beautiful results.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔧</div>
+                    <h3>General Maintenance</h3>
+                    <p>Comprehensive property maintenance including plumbing, electrical, HVAC, and general repairs to keep your properties in peak condition.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Property Restoration</h3>
+                    <p>Complete property restoration services for damaged or outdated properties. We bring properties back to their full potential.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📋</div>
+                    <h3>Project Management</h3>
+                    <p>Full-service project management from planning to completion. We coordinate all aspects of your property improvement projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Request Form -->
+    <section id="work-request" class="work-request">
+        <div class="container">
+            <h2 class="section-title">Request Your Free Quote</h2>
+            <div class="form-container">
+                <form id="workRequestForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="address">Property Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="workType">Type of Work Needed *</label>
+                            <select id="workType" name="workType" required>
+                                <option value="">Select work type...</option>
+                                <option value="roofing">Roofing (Repair/Replacement)</option>
+                                <option value="drywall">Drywall Work</option>
+                                <option value="painting">Painting (Interior/Exterior)</option>
+                                <option value="flooring">Flooring</option>
+                                <option value="plumbing">Plumbing</option>
+                                <option value="electrical">Electrical</option>
+                                <option value="hvac">HVAC</option>
+                                <option value="restoration">Complete Restoration</option>
+                                <option value="maintenance">General Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="workDescription">Work Description *</label>
+                            <textarea id="workDescription" name="workDescription" placeholder="Please describe the work needed in detail..." required></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="timeline">Preferred Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline...</option>
+                                <option value="asap">ASAP</option>
+                                <option value="1-2weeks">1-2 weeks</option>
+                                <option value="1month">Within 1 month</option>
+                                <option value="3months">Within 3 months</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Before & After Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <div class="before-after">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="Before renovation" class="before-img">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop" alt="After renovation" class="after-img">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Kitchen Renovation</h3>
+                        <p>Complete kitchen transformation with new cabinets, countertops, and modern fixtures.</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="before-after">
+                        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=250&fit=crop" alt="Before renovation" class="before-img">
+                        <img src="https://images.unsplash.com/photo-1560440021-33f9b867899d?w=400&h=250&fit=crop" alt="After renovation" class="after-img">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Bathroom Remodel</h3>
+                        <p>Modern bathroom renovation with new tiles, fixtures, and improved layout.</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="before-after">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&h=250&fit=crop" alt="Before renovation" class="before-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=250&fit=crop" alt="After renovation" class="after-img">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Roof Replacement</h3>
+                        <p>Complete roof replacement with modern materials and improved insulation.</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <div class="before-after">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400&h=250&fit=crop" alt="Before renovation" class="before-img">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=250&fit=crop" alt="After renovation" class="after-img">
+                    </div>
+                    <div class="gallery-info">
+                        <h3>Living Room Makeover</h3>
+                        <p>Complete living room transformation with new flooring, paint, and lighting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section id="jobs" class="jobs">
+        <div class="container">
+            <div class="jobs-content">
+                <h2 class="section-title">Join Our Team</h2>
+                <p>We're always looking for skilled professionals to join our growing team. If you're passionate about quality workmanship and customer service, we'd love to hear from you.</p>
+                <a href="#job-application" class="cta-button" onclick="showJobForm()">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>📞 (708) 447-7000</p>
+                <p>✉️  info@fathersonsimprovement.com</p>
+                <p>📍 28 East Ave, Riverside, IL 60546</p>
+            </div>
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 7:00 AM - 6:00 PM</p>
+                <p>Saturday: 8:00 AM - 4:00 PM</p>
+                <p>Sunday: Emergency calls only</p>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <p><a href="#services">Roofing Services</a></p>
+                <p><a href="#services">Drywall & Interior</a></p>
+                <p><a href="#services">Property Restoration</a></p>
+                <p><a href="#services">General Maintenance</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Father and Sons Home Improvement II, inc. All rights reserved. | Licensed & Insured</p>
+        </div>
+    </footer>
+
+    <!-- Job Application Modal -->
+    <div id="jobModal" class="job-modal">
+        <div class="job-modal-content">
+            <button onclick="closeJobForm()" class="close-btn">&times;</button>
+            <h2>Job Application</h2>
+            <form id="jobApplicationForm">
+                <div class="job-form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobEmail">Email Address *</label>
+                        <input type="email" id="jobEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobPhone">Phone Number *</label>
+                        <input type="tel" id="jobPhone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position Interested In *</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select position...</option>
+                            <option value="roofer">Roofer</option>
+                            <option value="carpenter">Carpenter</option>
+                            <option value="painter">Painter</option>
+                            <option value="electrician">Electrician</option>
+                            <option value="plumber">Plumber</option>
+                            <option value="general-laborer">General Laborer</option>
+                            <option value="project-manager">Project Manager</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" name="experience" min="0">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about your experience, skills, and why you'd like to join our team..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../src/script.js"></script>
+</body>
+</html>
