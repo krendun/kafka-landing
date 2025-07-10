@@ -4,6 +4,7 @@
     <title>Father and Sons Home Improvement - Professional Property Management & Restoration</title>
     <meta name="description" content="Expert property management and restoration services. From roofing to drywall, we handle all your property needs with professional care.">
     <link rel="stylesheet" href="../styles/styles.css">
+    <script src="../src/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -96,5 +97,23 @@
             </div>
         </div>
     </section>
+
+    <!-- Loading Overlay -->
+<div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-content">
+        <div class="spinner"></div>
+        <p>Submitting your request...</p>
+    </div>
+</div>
+
+<!-- Success Message -->
+<div id="successMessage" class="success-message">
+    <div class="success-icon">✓</div>
+    <div class="success-title">Request Submitted Successfully!</div>
+    <div class="success-text">
+        Thank you for your request! We will contact you promptly to discuss your project.
+    </div>
+    <button class="close-btn" onclick="closeSuccessMessage()">Close</button>
+</div>
 
     </body>

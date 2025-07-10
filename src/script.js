@@ -27,26 +27,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Form submission handlers
 document.addEventListener('DOMContentLoaded', function() {
-    // Work request form
     const workRequestForm = document.getElementById('workRequestForm');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    const successMessage = document.getElementById('successMessage');
+    
     if (workRequestForm) {
         workRequestForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Show loading overlay
+            loadingOverlay.style.display = 'flex';
             
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Here you would typically send the data to your server
             console.log('Work request submitted:', data);
             
-            // Show success message
-            alert('Thank you for your request! We will contact you within 24 hours to discuss your project and schedule a free consultation.');
-            
-            // Reset form
-            this.reset();
+            // Simulate processing time
+            setTimeout(() => {
+                // Hide loading overlay
+                loadingOverlay.style.display = 'none';
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                
+            }, 1500); // 1.5 second loading time
         });
     }
+});
+
+function closeSuccessMessage() {
+    document.getElementById('successMessage').style.display = 'none';
+}
 
     // Job application form
     const jobApplicationForm = document.getElementById('jobApplicationForm');
@@ -68,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
             closeJobForm();
         });
-    }
-});
+    };
 
 // Job modal functions
 function showJobForm() {
