@@ -44,9 +44,14 @@ body {
 
 /* Header Styles */
 header {
+    height: 80px;   
+    justify-content: space-between;
+    padding: 0;
+    align-items: center;
     background: var(--white);
     box-shadow: var(--shadow);
     position: fixed;
+    border-bottom: 1px solid var(--secondary-color);
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -55,23 +60,29 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo left, nav right */
     align-items: center;
+    height: 80px; /* Match header height */
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 2rem;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
+    flex: 0 0 auto;
+    margin-top: 3px;
+}
+
+.logo img {
+    max-width: 91px;  /* Adjust this value as needed */
+    height: auto;      /* Maintains aspect ratio */
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin: 0; 
 }
 
 .nav-links a {
@@ -112,6 +123,26 @@ a:hover {
   color: white; 
 }
 
+.nav-links a[href="quote.html"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.nav-links a[href="quote.html"]:hover {
+    background-color: #731616;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Remove the underline effect for CTA button */
+.nav-links a[href="quote.html"]::after {
+    display: none;
+}
+
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -124,6 +155,17 @@ a:hover {
     background: var(--primary-color);
     margin: 3px 0;
     transition: 0.3s;
+}
+
+/* Show mobile menu on small screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide desktop nav */
+    }
+    
+    .mobile-menu {
+        display: flex; /* Show mobile menu */
+    }
 }
 
 /* Hero Section */

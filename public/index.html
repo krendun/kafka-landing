@@ -14,14 +14,17 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo"> *insert logo here* </div>
+            <div class="logo">
+                <a href="index.html">
+                <img src="../assets/images/logo.png" alt="Company Logo">
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#work-request">Get Quote</a></li>
                 <li><a href="#gallery">Our Work</a></li>
                 <li><a href="#jobs">Careers</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="quote.html">Get a Quote</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMenu()">
                 <span></span>
@@ -78,72 +81,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Work Request Form -->
-    <section id="work-request" class="work-request">
-        <div class="container">
-            <h2 class="section-title">Request Your Free Quote</h2>
-            <div class="form-container">
-                <form id="workRequestForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="firstName">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="address">Property Address *</label>
-                            <input type="text" id="address" name="address" required>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="workType">Type of Work Needed *</label>
-                            <select id="workType" name="workType" required>
-                                <option value="">Select work type...</option>
-                                <option value="roofing">Roofing (Repair/Replacement)</option>
-                                <option value="drywall">Drywall Work</option>
-                                <option value="painting">Painting (Interior/Exterior)</option>
-                                <option value="flooring">Flooring</option>
-                                <option value="plumbing">Plumbing</option>
-                                <option value="electrical">Electrical</option>
-                                <option value="hvac">HVAC</option>
-                                <option value="restoration">Complete Restoration</option>
-                                <option value="maintenance">General Maintenance</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="workDescription">Work Description *</label>
-                            <textarea id="workDescription" name="workDescription" placeholder="Please describe the work needed in detail..." required></textarea>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="timeline">Preferred Timeline</label>
-                            <select id="timeline" name="timeline">
-                                <option value="">Select timeline...</option>
-                                <option value="asap">ASAP</option>
-                                <option value="1-2weeks">1-2 weeks</option>
-                                <option value="1month">Within 1 month</option>
-                                <option value="3months">Within 3 months</option>
-                                <option value="flexible">Flexible</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button type="submit" class="submit-btn">Submit Request</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Before/After Gallery -->
     <section id="gallery" class="gallery">
         <div class="container">
