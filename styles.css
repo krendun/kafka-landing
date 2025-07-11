@@ -60,7 +60,7 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between; /* Logo left, nav right */
+    justify-content: space-between; 
     align-items: center;
     height: 80px; /* Match header height */
     max-width: 1200px;
