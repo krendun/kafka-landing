@@ -682,6 +682,10 @@ footer {
     color: white;
 }
 
+.footer-bottom p {
+    font-size: 0.75rem;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
