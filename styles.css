@@ -89,9 +89,10 @@ nav {
     text-decoration: none;
     color: var(--primary-color);
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     transition: 
         color var(--transition-medium),
+        text-shadow var(--transition-medium),
         filter var(--transition-medium);   
 }
 
@@ -101,18 +102,18 @@ nav {
     bottom: -5px; /* distance from text to line below */
     left: 0;
     width: 0;
-    height: 2px; /* Thickness of underline */
+    height: 1px; /* Thickness of underline */
     background-color: var(--primary-color);
     transition: width var(--transition-medium);
 }
 
 .nav-links a:hover {
     color: #731616;
-    font-weight: 700;
+    text-shadow: 0 0 0.5px currentColor;
 }
 
 .nav-links a:hover::after {
-    width: 100%;
+    width: 0; /* Removes underline on hover */
 }
 
 a {
@@ -133,7 +134,7 @@ a:hover {
 }
 
 .nav-links a[href="quote.html"]:hover {
-    background-color: #731616;
+    background-color: var(--secondary-color);
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
