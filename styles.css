@@ -114,7 +114,6 @@ nav {
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background: var(--white);
     padding: 0 10px;
     border-radius: 5px;
     box-shadow: var(--shadow);
