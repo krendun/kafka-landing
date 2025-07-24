@@ -83,6 +83,10 @@ nav {
     list-style: none;
     gap: 2rem;
     margin: 0; 
+    padding: 0;
+    align-items: center;
+    flex: 1; /* Take up remaining space */
+    justify-content: flex-end; /* Align links to the right */
 }
 
 .nav-links a {
