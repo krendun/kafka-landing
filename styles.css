@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -33,6 +34,10 @@ h3 { font-size: 1.5rem; }
 .btn, button {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color var(--transition-medium), box-shadow var(--transition-medium);
 }
 
 body {
@@ -40,6 +45,14 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     font-weight: 400;
+    background: var(--bg-light);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 80px; /* Space for fixed header */
 }
 
 /* Header Styles */
@@ -56,6 +69,7 @@ header {
     width: 100%;
     z-index: 1000;
     transition: all 0.3s ease;
+    animation: slideDown 0.5s ease-out;
 }
 
 nav {
@@ -66,16 +80,21 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 2rem;
+    width: 100%;
 }
 
 .logo {
     flex: 0 0 auto;
     margin-top: 12px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     max-width: 175px;  /* Adjust this value as needed */
     height: auto;      /* Maintains aspect ratio */
+    display: block;
 }
 
 .nav-links {
@@ -87,6 +106,18 @@ nav {
     align-items: center;
     flex: 1; /* Take up remaining space */
     justify-content: flex-end; /* Align links to the right */
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: var(--white);
+    padding: 0 10px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
 }
 
 .nav-links a {
@@ -98,6 +129,8 @@ nav {
         color var(--transition-medium),
         text-shadow var(--transition-medium),
         filter var(--transition-medium);   
+    padding: 5px 0; /* Space for underline effect */
+    display: inline-block;
 }
 
 .nav-links a::after {
@@ -109,23 +142,31 @@ nav {
     height: 1px; /* Thickness of underline */
     background-color: var(--primary-color);
     transition: width var(--transition-medium);
+    border-radius: 2px;
 }
 
 .nav-links a:hover {
     color: #731616;
     text-shadow: 0 0 0.5px currentColor;
+    filter: brightness(1.2);
 }
 
 .nav-links a:hover::after {
-    width: 0; /* Removes underline on hover */
+    width: 100%; /* Full width on hover */
 }
 
 a {
   color: var(--primary-color);
   transition: color 0.3s ease;
+  text-decoration: none;
 }
+a:visited {
+  color: var(--primary-color);
+}
+
 a:hover {
   color: white; 
+  text-decoration: underline;
 }
 
 .nav-links a[href="quote.html"] {
@@ -135,6 +176,19 @@ a:hover {
     border-radius: 5px;
     font-weight: 700;
     transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+    text-transform: none; /* Normal case */
+    font-size: 1rem;
+    letter-spacing: normal;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 10px;
+    white-space: nowrap; /* Prevents text wrapping */
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+    height: 40px; /* Fixed height for consistency */
+    padding-top: 8px; /* Vertically center text */
 }
 
 .nav-links a[href="quote.html"]:hover {
@@ -503,12 +557,15 @@ textarea {
 .gallery {
     padding: 80px 2rem;
     background: var(--bg-light);
+    text-align: center;
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
 }
 
 .gallery-item {
@@ -517,6 +574,7 @@ textarea {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -528,6 +586,9 @@ textarea {
     position: relative;
     height: 250px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .before-after img {
@@ -536,6 +597,7 @@ textarea {
     object-fit: cover;
     position: absolute;
     top: 0;
+    transition: all 0.5s ease;
 }
 
 .before-img {
@@ -578,11 +640,13 @@ textarea {
 
 .gallery-info {
     padding: 1.5rem;
+    text-align: left;
 }
 
 .gallery-info h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
 }
 
 /* Jobs Section */
@@ -595,6 +659,7 @@ textarea {
 .jobs-content {
     max-width: 600px;
     margin: 0 auto;
+    margin-bottom: 4rem;
 }
 
 .jobs p {
@@ -615,6 +680,7 @@ textarea {
     z-index: 2000;
     padding: 2rem;
     overflow-y: auto;
+    animation: fadeIn 0.3s ease-out;
 }
 
 .job-modal-content {
@@ -624,6 +690,8 @@ textarea {
     padding: 2rem;
     border-radius: 15px;
     position: relative;
+    box-shadow: var(--shadow);
+    animation: slideIn 0.3s ease-out;
 }
 
 .close-btn {
@@ -635,6 +703,8 @@ textarea {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--text-dark);
+    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
 .close-btn:hover {
@@ -644,11 +714,13 @@ textarea {
 .job-modal h2 {
     margin-bottom: 1.5rem;
     color: var(--primary-color);
+    text-align: center;
 }
 
 .job-form-grid {
     display: grid;
     gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Footer Styles */
@@ -656,6 +728,11 @@ footer {
     background: var(--secondary-color);
     color: var(--white);
     padding: 3rem 2rem 2rem;
+    margin-top: 4rem;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
 }
 
 .footer-content {
@@ -670,16 +747,21 @@ footer {
     margin-bottom: 1rem;
     color: var(--white);
     text-transform: uppercase;
+    font-size: 1.25rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
 }
 
 .footer-section p, .footer-section a {
     color: white;
     text-decoration: none;
     line-height: 1.8;
+    transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
     color: var(--white);
+    text-decoration: underline;
 }
 
 .footer-bottom {
@@ -688,10 +770,13 @@ footer {
     padding-top: 2rem;
     border-top: 1px solid #34495e;
     color: white;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 .footer-bottom p {
     font-size: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 /* Animations */
